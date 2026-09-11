@@ -1,0 +1,9 @@
+Flask
+Flask-Cors
+Flask-SQLAlchemy
+Flask-JWT-Extended
+python-dotenv
+psycopg2-binary
+scikit-learn==1.6.1
+joblib
+pandas

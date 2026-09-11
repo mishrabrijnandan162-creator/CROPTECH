@@ -1,0 +1,290 @@
+.order-details-page {
+  min-height: 80vh;
+  background: #f6faf7;
+  padding: 45px 7%;
+}
+
+.order-details-container {
+  max-width: 1050px;
+  margin: auto;
+}
+
+.back-link {
+  color: #176b3a;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* TOP */
+
+.order-top-card {
+  margin-top: 25px;
+  background: white;
+  padding: 25px 30px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-label {
+  color: #198754;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.order-top-card h1 {
+  color: #173d27;
+  margin: 8px 0;
+  font-size: 32px;
+}
+
+.order-top-card p {
+  color: #7b8780;
+}
+
+.current-status {
+  background: #e8f1ff;
+  color: #2864b5;
+  padding: 10px 16px;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* PRODUCT */
+
+.order-product-card {
+  margin-top: 20px;
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  display: flex;
+  gap: 25px;
+}
+
+.large-order-emoji {
+  width: 130px;
+  height: 130px;
+  background: #edf7ef;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 65px;
+}
+
+.order-product-info {
+  flex: 1;
+}
+
+.order-product-info h2 {
+  color: #173d27;
+  margin: 5px 0;
+}
+
+.order-product-info p {
+  color: #78847d;
+}
+
+.order-meta {
+  display: flex;
+  gap: 50px;
+  margin-top: 25px;
+}
+
+.order-meta div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.order-meta span {
+  color: #89948e;
+  font-size: 12px;
+}
+
+.order-meta strong {
+  color: #263c2e;
+}
+
+/* TRACKING */
+
+.tracking-card {
+  margin-top: 20px;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+}
+
+.tracking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tracking-header h2 {
+  margin: 0;
+  color: #173d27;
+}
+
+.tracking-header p {
+  color: #7b8780;
+}
+
+.delivery-date {
+  color: #176b3a;
+  font-weight: 600;
+}
+
+/* TIMELINE */
+
+.timeline {
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 18px;
+  position: relative;
+  min-height: 90px;
+}
+
+.timeline-item:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 17px;
+  top: 36px;
+  height: 70px;
+  border-left: 2px dashed #d8e3db;
+}
+
+.timeline-item.completed:not(:last-child)::before {
+  border-left: 2px solid #176b3a;
+}
+
+.timeline-marker {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  background: #eef2ef;
+  color: #8a948e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  z-index: 1;
+}
+
+.timeline-item.completed .timeline-marker {
+  background: #176b3a;
+  color: white;
+}
+
+.timeline-content h3 {
+  margin: 0;
+  color: #34463b;
+}
+
+.timeline-content p {
+  margin: 5px 0;
+  color: #7c8781;
+  font-size: 14px;
+}
+
+.timeline-content span {
+  color: #a0aaa4;
+  font-size: 12px;
+}
+
+/* DELIVERY */
+
+.delivery-card {
+  margin-top: 20px;
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.delivery-icon {
+  font-size: 35px;
+}
+
+.delivery-card span {
+  color: #198754;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.delivery-card h3 {
+  margin: 6px 0;
+  color: #263c2e;
+}
+
+.delivery-card p {
+  margin: 0;
+  color: #7c8781;
+  font-size: 13px;
+}
+
+/* AI */
+
+.order-ai-card {
+  margin-top: 20px;
+  padding: 20px 25px;
+  background: #eaf7ee;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.order-ai-icon {
+  font-size: 30px;
+}
+
+.order-ai-card h3 {
+  color: #176b3a;
+  margin: 0 0 5px;
+}
+
+.order-ai-card p {
+  margin: 0;
+  color: #587061;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+
+  .order-details-page {
+    padding: 30px 4%;
+  }
+
+  .order-top-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .order-product-card {
+    flex-direction: column;
+  }
+
+  .order-meta {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .tracking-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
