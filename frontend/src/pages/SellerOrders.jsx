@@ -352,6 +352,12 @@ function SellerOrders() {
                                                 </button>
                                             )}
                                         </div>
+                                        <Link
+                                            to={`/order/${order.id}`}
+                                            className="view-order-btn"
+                                        >
+                                            View Details
+                                        </Link>
                                     </div>
                                 );
                             })}
