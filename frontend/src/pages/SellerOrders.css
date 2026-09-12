@@ -1,340 +1,628 @@
+/* =========================================
+   CROP TECH - SELLER ORDERS
+   ========================================= */
 .seller-orders-page {
-  min-height: 100vh;
-  background: #f6f8f5;
-  padding: 40px 20px;
+    min-height: calc(100vh - 80px);
+    background: #f5f9f6;
+    padding: 48px 6%;
 }
 
 .seller-orders-container {
-  max-width: 1200px;
-  margin: auto;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
-/* HEADER */
+/* =========================================
+   HEADER
+   ========================================= */
 
 .seller-orders-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+    margin-bottom: 32px;
 }
 
 .seller-label {
-  color: #4f7d4f;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
+    margin: 0 0 8px;
+    color: #198754;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
 }
 
 .seller-orders-header h1 {
-  margin: 0;
-  font-size: 36px;
-  color: #1d2b1d;
+    margin: 0;
+    color: #173d27;
+    font-size: 40px;
+    line-height: 1.15;
+    font-weight: 800;
 }
 
 .seller-orders-header p {
-  color: #6b746b;
-  margin-top: 8px;
+    margin: 10px 0 0;
+    color: #718078;
+    font-size: 15px;
 }
+
+/* =========================================
+   DASHBOARD BUTTON
+   ========================================= */
 
 .back-dashboard-btn {
-  text-decoration: none;
-  background: #ffffff;
-  color: #315b31;
-  border: 1px solid #d9e2d7;
-  padding: 12px 20px;
-  border-radius: 10px;
-  font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background: #ffffff;
+    color: #176b3a;
+    border: 1px solid #d7e4da;
+    padding: 12px 19px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: all 0.2s ease;
 }
 
-/* STATS */
+    .back-dashboard-btn:hover {
+        background: #edf7ef;
+        border-color: #176b3a;
+    }
+
+/* =========================================
+   STATISTICS
+   ========================================= */
 
 .seller-order-stats {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
-  margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 14px;
+    margin-bottom: 26px;
 }
 
 .seller-stat {
-  background: #ffffff;
-  border: 1px solid #e3e9e1;
-  border-radius: 14px;
-  padding: 20px;
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #e3ebe5;
+    border-radius: 13px;
+    padding: 19px;
+    box-shadow: 0 5px 18px rgba(23, 61, 39, 0.04);
 }
 
-.seller-stat span {
-  display: block;
-  color: #737a73;
-  font-size: 14px;
-  margin-bottom: 8px;
-}
+    .seller-stat::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 15px;
+        bottom: 15px;
+        width: 4px;
+        background: #198754;
+        border-radius: 0 4px 4px 0;
+    }
 
-.seller-stat strong {
-  font-size: 28px;
-  color: #263c26;
-}
+    .seller-stat span {
+        display: block;
+        color: #77837b;
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
 
-/* CARD */
+    .seller-stat strong {
+        display: block;
+        color: #176b3a;
+        font-size: 27px;
+        line-height: 1;
+    }
+
+/* =========================================
+   MAIN CARD
+   ========================================= */
 
 .seller-orders-card {
-  background: #ffffff;
-  border: 1px solid #e1e7df;
-  border-radius: 16px;
-  overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e3ebe5;
+    border-radius: 17px;
+    overflow: hidden;
+    box-shadow: 0 7px 25px rgba(23, 61, 39, 0.05);
 }
+
+/* =========================================
+   CARD HEADER
+   ========================================= */
 
 .seller-orders-card-header {
-  padding: 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #edf0eb;
+    padding: 25px 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #edf1ee;
 }
 
-.seller-orders-card-header h2 {
-  margin: 0;
-  color: #263526;
-}
+    .seller-orders-card-header h2 {
+        margin: 0;
+        color: #173d27;
+        font-size: 21px;
+        font-weight: 750;
+    }
 
-.seller-orders-card-header p {
-  margin-top: 6px;
-  color: #7a8279;
-}
+    .seller-orders-card-header p {
+        margin: 6px 0 0;
+        color: #7a8780;
+        font-size: 13px;
+    }
 
-.seller-orders-card-header select {
-  padding: 10px 14px;
-  border: 1px solid #d7dfd5;
-  border-radius: 8px;
-  background: white;
-  cursor: pointer;
-}
+    .seller-orders-card-header select {
+        min-width: 155px;
+        padding: 10px 13px;
+        border: 1px solid #d7e1d9;
+        border-radius: 8px;
+        outline: none;
+        background: #ffffff;
+        color: #35453c;
+        font-size: 13px;
+        cursor: pointer;
+    }
 
-/* ORDER */
+        .seller-orders-card-header select:focus {
+            border-color: #198754;
+            box-shadow: 0 0 0 3px rgba(25, 135, 84, 0.08);
+        }
+
+/* =========================================
+   ORDERS LIST
+   ========================================= */
 
 .seller-orders-list {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .seller-order-item {
-  display: grid;
-  grid-template-columns: 2fr 1.3fr 1fr 1.2fr 1.2fr;
-  align-items: center;
-  gap: 20px;
-  padding: 22px 24px;
-  border-bottom: 1px solid #edf0eb;
+    display: grid;
+    /*
+    5 columns:
+    Product | Buyer | Quantity | Total | Status
+  */
+
+    grid-template-columns: minmax(220px, 2fr) minmax(120px, 1.15fr) minmax(100px, 0.9fr) minmax(110px, 1fr) minmax(160px, 1.25fr);
+    align-items: center;
+    gap: 20px;
+    padding: 21px 26px;
+    border-bottom: 1px solid #edf1ee;
 }
 
-.seller-order-item:last-child {
-  border-bottom: none;
-}
+    .seller-order-item:last-child {
+        border-bottom: none;
+    }
+
+/* =========================================
+   PRODUCT
+   ========================================= */
 
 .seller-order-product {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 13px;
 }
 
 .seller-order-icon {
-  width: 55px;
-  height: 55px;
-  background: #f0f6ed;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #edf7ef;
+    border: 1px solid #dcefe1;
+    border-radius: 12px;
+    font-size: 26px;
+}
+
+.seller-order-product > div:last-child {
+    min-width: 0;
 }
 
 .seller-order-product h3 {
-  margin: 0 0 5px;
-  color: #263526;
+    margin: 0 0 5px;
+    color: #263c2e;
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .seller-order-product span {
-  font-size: 13px;
-  color: #808780;
+    display: block;
+    color: #89948e;
+    font-size: 12px;
 }
 
-.seller-order-detail span {
-  display: block;
-  font-size: 12px;
-  color: #858c84;
-  margin-bottom: 5px;
+/* =========================================
+   ORDER DETAILS
+   ========================================= */
+
+.seller-order-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
-.seller-order-detail strong {
-  color: #303930;
+    .seller-order-detail span {
+        display: block;
+        color: #89948e;
+        font-size: 11px;
+        font-weight: 600;
+    }
+
+    .seller-order-detail strong {
+        color: #35453c;
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+.seller-total {
+    color: #176b3a !important;
+    font-size: 16px !important;
 }
 
-/* STATUS */
+/* =========================================
+   STATUS
+   ========================================= */
 
 .seller-order-status {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
 }
 
 .seller-status-badge {
-  width: fit-content;
-  padding: 6px 11px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 6px 11px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 750;
+    white-space: nowrap;
 }
+
+    .seller-status-badge.pending {
+        background: #fff4d8;
+        color: #956b00;
+    }
+
+    .seller-status-badge.confirmed {
+        background: #e5f1ff;
+        color: #25619b;
+    }
+
+    .seller-status-badge.processing {
+        background: #eee8ff;
+        color: #6948a5;
+    }
+
+    .seller-status-badge.shipped {
+        background: #e2f4f0;
+        color: #217568;
+    }
+
+    .seller-status-badge.delivered {
+        background: #e1f5e5;
+        color: #28763a;
+    }
+
+    .seller-status-badge.cancelled {
+        background: #f0eeee;
+        color: #777;
+    }
 
 .seller-order-status small {
-  color: #858c84;
+    color: #929b96;
+    font-size: 11px;
 }
 
-.seller-status-badge.pending {
-  background: #fff4d8;
-  color: #956b00;
+/* =========================================
+   STATUS ACTION
+   ========================================= */
+
+.status-action-btn {
+    margin-top: 4px;
+    border: none;
+    background: #176b3a;
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 7px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
 }
 
-.seller-status-badge.confirmed {
-  background: #e5f1ff;
-  color: #25619b;
+    .status-action-btn:hover {
+        background: #125b31;
+        transform: translateY(-1px);
+    }
+
+    .status-action-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+/* =========================================
+   ERROR
+   ========================================= */
+
+.seller-orders-error {
+    margin: 20px 25px;
+    padding: 13px 15px;
+    background: #fff4f4;
+    border: 1px solid #efd4d4;
+    border-radius: 9px;
+    color: #a33a3a;
 }
 
-.seller-status-badge.processing {
-  background: #eee8ff;
-  color: #6948a5;
-}
+    .seller-orders-error p {
+        margin: 0;
+    }
 
-.seller-status-badge.shipped {
-  background: #e2f4f0;
-  color: #217568;
-}
-
-.seller-status-badge.delivered {
-  background: #e1f5e5;
-  color: #28763a;
-}
-
-.seller-status-badge.cancelled {
-  background: #ffe5e5;
-  color: #a33a3a;
-}
-
-/* EMPTY */
+/* =========================================
+   EMPTY / LOADING
+   ========================================= */
 
 .seller-orders-empty {
-  text-align: center;
-  padding: 70px 20px;
+    text-align: center;
+    padding: 65px 20px;
 }
 
-.seller-orders-empty h3 {
-  color: #354035;
-  margin-bottom: 8px;
-}
+    .seller-orders-empty h3 {
+        margin: 13px 0 7px;
+        color: #354035;
+        font-size: 18px;
+    }
 
-.seller-orders-empty p {
-  color: #7c847b;
-}
+    .seller-orders-empty p {
+        margin: 0 auto;
+        max-width: 520px;
+        color: #7c847b;
+        font-size: 13px;
+        line-height: 1.6;
+    }
 
 .empty-icon {
-  font-size: 55px;
-  margin-bottom: 10px;
+    font-size: 48px;
 }
+
+/* =========================================
+   RETRY
+   ========================================= */
 
 .retry-btn {
-  margin-top: 15px;
-  padding: 10px 18px;
-  border: none;
-  border-radius: 8px;
-  background: #315f31;
-  color: white;
-  cursor: pointer;
+    margin-top: 18px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #176b3a;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
 }
 
-/* INFO */
+    .retry-btn:hover {
+        background: #125b31;
+    }
+
+/* =========================================
+   INFORMATION CARD
+   ========================================= */
 
 .seller-order-info {
-  margin-top: 25px;
-  background: #edf6ea;
-  border: 1px solid #d8e8d3;
-  border-radius: 14px;
-  padding: 22px;
-  display: flex;
-  gap: 16px;
-  align-items: center;
+    margin-top: 25px;
+    background: #eaf7ee;
+    border: 1px solid #d9eedf;
+    border-radius: 15px;
+    padding: 21px 24px;
+    display: flex;
+    align-items: center;
+    gap: 17px;
 }
 
 .seller-info-icon {
-  font-size: 35px;
+    width: 50px;
+    height: 50px;
+    flex: 0 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 12px;
+    font-size: 26px;
 }
 
 .seller-order-info h3 {
-  margin: 0 0 5px;
-  color: #315531;
+    margin: 0 0 5px;
+    color: #176b3a;
+    font-size: 16px;
 }
 
 .seller-order-info p {
-  margin: 0;
-  color: #647064;
+    margin: 0;
+    color: #587061;
+    font-size: 13px;
+    line-height: 1.5;
 }
 
-/* RESPONSIVE */
+/* =========================================
+   LARGE TABLET
+   ========================================= */
 
-@media (max-width: 900px) {
-  .seller-order-stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
+@media (max-width: 1100px) {
 
-  .seller-order-item {
-    grid-template-columns: 1fr 1fr;
-  }
+    .seller-orders-page {
+        padding: 40px 4%;
+    }
+
+    .seller-order-stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .seller-order-item {
+        grid-template-columns: minmax(190px, 1.7fr) minmax(100px, 1fr) minmax(90px, 0.9fr) minmax(100px, 1fr) minmax(140px, 1.2fr);
+        gap: 14px;
+        padding: 20px;
+    }
 }
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 850px) {
+
+    .seller-orders-header {
+        align-items: flex-start;
+    }
+
+        .seller-orders-header h1 {
+            font-size: 34px;
+        }
+
+    .seller-order-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /*
+    Convert order rows into cards.
+  */
+
+    .seller-order-item {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        padding: 22px;
+    }
+
+    .seller-order-product {
+        grid-column: 1 / -1;
+    }
+
+    .seller-order-status {
+        grid-column: 1 / -1;
+    }
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
 
 @media (max-width: 600px) {
-  .seller-orders-page {
-    padding: 25px 15px;
-  }
 
-  .seller-orders-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+    .seller-orders-page {
+        padding: 30px 4%;
+    }
 
-  .seller-orders-header h1 {
-    font-size: 28px;
-  }
+    .seller-orders-header {
+        flex-direction: column;
+        gap: 18px;
+        margin-bottom: 25px;
+    }
 
-  .seller-order-stats {
-    grid-template-columns: 1fr 1fr;
-  }
+        .seller-orders-header h1 {
+            font-size: 30px;
+        }
 
-  .seller-orders-card-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
+        .seller-orders-header p {
+            font-size: 13px;
+            line-height: 1.5;
+        }
 
-  .seller-order-item {
-    grid-template-columns: 1fr;
-  }
+    .back-dashboard-btn {
+        width: 100%;
+    }
+
+    .seller-order-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .seller-stat {
+        padding: 16px;
+    }
+
+        .seller-stat strong {
+            font-size: 24px;
+        }
+
+    .seller-orders-card {
+        border-radius: 14px;
+    }
+
+    .seller-orders-card-header {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px;
+    }
+
+        .seller-orders-card-header select {
+            width: 100%;
+        }
+
+    .seller-order-item {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .seller-order-product,
+    .seller-order-status {
+        grid-column: auto;
+    }
+
+    .seller-order-status {
+        width: 100%;
+    }
+
+    .status-action-btn {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .seller-order-info {
+        align-items: flex-start;
+        padding: 18px;
+    }
+
+        .seller-order-info h3 {
+            font-size: 14px;
+        }
+
+        .seller-order-info p {
+            font-size: 12px;
+        }
 }
-.status-action-btn {
-  margin-top: 8px;
-  border: none;
-  background: #315f31;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 7px;
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  white-space: nowrap;
-}
 
-.status-action-btn:hover {
-  background: #264d26;
-}
+/* =========================================
+   VERY SMALL MOBILE
+   ========================================= */
 
-.status-action-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+@media (max-width: 380px) {
+
+    .seller-order-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .seller-order-icon {
+        width: 46px;
+        height: 46px;
+        flex-basis: 46px;
+    }
 }
