@@ -108,12 +108,12 @@ def register():
     # =========================
 
     elif role == "FPO":
-
         fpo = FPO(
-            user_id=user.id
-        )
-
-        db.session.add(fpo)
+        user_id=user.id,
+        name=name,
+        verification_status="PENDING"
+    )
+    db.session.add(fpo)
 
     # BUYER ke liye abhi separate profile nahi hai
 
@@ -215,3 +215,42 @@ def current_user():
         "name": claims.get("name"),
         "role": claims.get("role")
     }), 200
+
+@auth_bp.route("/create-admin", methods=["POST"])
+def create_admin():
+    data = request.get_json()
+
+    name = data.get("name")
+    email = data.get("email")
+    phone = data.get("phone")
+    password = data.get("password")
+
+    if not name or not email or not phone or not password:
+        return jsonify({
+            "message": "Name, email, phone and password are required"
+        }), 400
+
+    existing_user = User.query.filter(
+        (User.email == email) | (User.phone == phone)
+    ).first()
+
+    if existing_user:
+        return jsonify({
+            "message": "User with this email or phone already exists"
+        }), 409
+
+    admin = User(
+        name=name,
+        email=email,
+        phone=phone,
+        password_hash=generate_password_hash(password),
+        role="ADMIN"
+    )
+
+    db.session.add(admin)
+    db.session.commit()
+
+    return jsonify({
+        "message": "Admin created successfully",
+        "admin_id": admin.id
+    }), 201

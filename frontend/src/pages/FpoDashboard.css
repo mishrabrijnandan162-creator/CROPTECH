@@ -1,0 +1,423 @@
+.fpo-dashboard {
+  min-height: calc(100vh - 70px);
+  padding: 35px 5%;
+  background: #f7faf7;
+}
+
+/* HEADER */
+
+.fpo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.fpo-label {
+  margin: 0 0 7px;
+  color: #2e7d32;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.fpo-header h1 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 30px;
+}
+
+.fpo-location {
+  margin: 8px 0 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.verification-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 15px;
+  border-radius: 20px;
+  background: #fff8e1;
+  color: #a16207;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f59e0b;
+}
+
+/* STATS */
+
+.fpo-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.fpo-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 22px;
+  background: white;
+  border: 1px solid #e5ebe6;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(35, 80, 45, 0.06);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  background: #e8f5e9;
+  font-size: 22px;
+}
+
+.fpo-stat-card p {
+  margin: 0 0 5px;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.fpo-stat-card h2 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 23px;
+}
+
+/* QUICK ACTIONS */
+
+.fpo-actions-section,
+.fpo-products-section,
+.fpo-order-summary {
+  background: white;
+  border: 1px solid #e5ebe6;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.fpo-actions-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fpo-actions-section h2,
+.section-heading h2,
+.fpo-order-summary h2 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 20px;
+}
+
+.fpo-actions-section p,
+.section-heading p,
+.fpo-order-summary p {
+  margin: 6px 0 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.fpo-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.fpo-actions button {
+  padding: 11px 17px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.action-primary {
+  border: none;
+  background: #2e7d32;
+  color: white;
+}
+
+.action-primary:hover {
+  background: #1b5e20;
+}
+
+.action-secondary {
+  border: 1px solid #d6e2d7;
+  background: white;
+  color: #2e7d32;
+}
+
+.action-secondary:hover {
+  background: #edf7ed;
+}
+
+/* PRODUCTS */
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.view-all-btn {
+  border: none;
+  background: #edf7ed;
+  color: #2e7d32;
+  padding: 9px 15px;
+  border-radius: 7px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.products-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.fpo-products-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fpo-products-table th {
+  padding: 13px 12px;
+  text-align: left;
+  background: #f7faf7;
+  color: #6b7280;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.fpo-products-table td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #edf0ed;
+  color: #374151;
+  font-size: 14px;
+}
+
+.crop-name {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.quality-badge {
+  padding: 5px 9px;
+  border-radius: 6px;
+  background: #f3f4f6;
+  font-size: 12px;
+}
+
+.available-badge,
+.unavailable-badge {
+  padding: 5px 9px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.available-badge {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.unavailable-badge {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.edit-product-btn {
+  border: none;
+  background: #edf7ed;
+  color: #2e7d32;
+  padding: 7px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.edit-product-btn:hover {
+  background: #dff0e0;
+}
+
+/* EMPTY */
+
+.empty-products {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.empty-icon {
+  font-size: 42px;
+}
+
+.empty-products h3 {
+  margin: 12px 0 5px;
+  color: #374151;
+}
+
+.empty-products p {
+  color: #6b7280;
+}
+
+.empty-products button {
+  margin-top: 10px;
+  padding: 10px 17px;
+  border: none;
+  border-radius: 8px;
+  background: #2e7d32;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ORDER SUMMARY */
+
+.fpo-order-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-mini-stats {
+  display: flex;
+  gap: 35px;
+}
+
+.order-mini-stats div {
+  text-align: center;
+}
+
+.order-mini-stats span {
+  display: block;
+  color: #6b7280;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.order-mini-stats strong {
+  color: #1f2937;
+  font-size: 22px;
+}
+
+/* LOADING */
+
+.fpo-loading {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #6b7280;
+}
+
+.loading-spinner {
+  width: 35px;
+  height: 35px;
+  border: 4px solid #dce9dd;
+  border-top-color: #2e7d32;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ERROR */
+
+.fpo-error-page {
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fpo-error-box {
+  text-align: center;
+}
+
+.fpo-error-box h2 {
+  color: #c62828;
+}
+
+.fpo-error-box p {
+  color: #6b7280;
+}
+
+.fpo-error-box button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #2e7d32;
+  color: white;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+  .fpo-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fpo-actions-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 650px) {
+  .fpo-dashboard {
+    padding: 25px 15px;
+  }
+
+  .fpo-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .fpo-header h1 {
+    font-size: 25px;
+  }
+
+  .fpo-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .fpo-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .fpo-actions button {
+    width: 100%;
+  }
+
+  .fpo-order-summary {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .order-mini-stats {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+  }
+}

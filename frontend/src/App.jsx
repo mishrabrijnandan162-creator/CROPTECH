@@ -14,57 +14,67 @@ import MyOrders from "./pages/MyOrders";
 import OrderDetails from "./pages/OrderDetails";
 import SellerOrders from "./pages/SellerOrders";
 import BuyerDashboard from "./pages/BuyerDashboard";
+import EditCrop from "./pages/EditCrop";
+import FpoDashboard from "./pages/FpoDashboard";
+import AdminDashboard from "./pages/AdminDashboard";
 function App() {
-  return (
-    <BrowserRouter>
+    return (
+        <BrowserRouter>
 
-      <Navbar />
+            <Navbar />
 
-      <Routes>
+            <Routes>
 
-        <Route path="/" element={<Home />} />
+                <Route path="/" element={<Home />} />
 
-        <Route path="/login" element={<Login />} />
+                <Route path="/login" element={<Login />} />
 
-        <Route path="/register" element={<Register />} />
+                <Route path="/register" element={<Register />} />
 
-        <Route path="/marketplace" element={<Marketplace />} />
-        <Route path="/product/:id" element={<ProductDetails />} />
+                <Route path="/marketplace" element={<Marketplace />} />
+                <Route path="/product/:id" element={<ProductDetails />} />
 
-        <Route
-  path="/farmer-dashboard"
-  element={<FarmerDashboard />}
-/>  
-        <Route
-  path="/add-crop"
-  element={<AddCrop />}
-/>
+                <Route
+                    path="/farmer-dashboard"
+                    element={<FarmerDashboard />}
+                />
+                <Route
+                    path="/add-crop"
+                    element={<AddCrop />}
+                />
 
-        <Route
-  path="/my-orders"
-  element={<MyOrders />}
-/>
-<Route
-  path="/seller-orders"
-  element={<SellerOrders />}
-/>
-<Route
-  path="/order/:id"
-  element={<OrderDetails />}
-/>
+                <Route
+                    path="/my-orders"
+                    element={<MyOrders />}
+                />
+                <Route
+                    path="/seller-orders"
+                    element={<SellerOrders />}
+                />
+                <Route
+                    path="/order/:id"
+                    element={<OrderDetails />}
+                />
 
-<Route
-  path="/buyer-dashboard"
-  element={<BuyerDashboard />}
-/>
+                <Route
+                    path="/buyer-dashboard"
+                    element={<BuyerDashboard />}
+                />
 
-      </Routes>
-      
+                <Route path="/edit-crop/:id" element={<EditCrop />} />
+                <Route path="/fpo-dashboard" element={<FpoDashboard />} />
+                <Route
+                    path="/admin-dashboard"
+                    element={<AdminDashboard />}
+                />
 
-      <Footer />
+            </Routes>
 
-    </BrowserRouter>
-  );
+
+            <Footer />
+
+        </BrowserRouter>
+    );
 }
 
 export default App;

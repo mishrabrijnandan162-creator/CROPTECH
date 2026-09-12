@@ -1,428 +1,218 @@
+/* =========================
+   CROP TECH - REGISTER PAGE
+========================= */
+
 .register-page {
-  min-height: calc(100vh - 72px);
-
-  background: #f5f8f5;
-
-  display: flex;
-  justify-content: center;
-
-  padding: 45px 20px;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 45px 20px;
+    background: linear-gradient( 135deg, #f1f8f3 0%, #ffffff 50%, #eaf6ed 100% );
 }
 
-.register-container {
-  width: 100%;
-  max-width: 1100px;
-
-  background: white;
-
-  border-radius: 24px;
-
-  overflow: hidden;
-
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-
-  box-shadow: 0 20px 60px rgba(24, 55, 28, 0.08);
-}
-
-
-/* LEFT */
-
-.register-info {
-  background: #19351e;
-
-  color: white;
-
-  padding: 45px;
-
-  display: flex;
-  flex-direction: column;
-}
-
-.register-logo {
-  color: white;
-
-  text-decoration: none;
-
-  font-size: 21px;
-  font-weight: 800;
-}
-
-.register-logo span {
-  color: #71c276;
-}
-
-.register-info-content {
-  margin: auto 0;
-}
-
-.register-label {
-  color: #71c276;
-
-  font-size: 11px;
-  font-weight: 800;
-
-  letter-spacing: 1.5px;
-}
-
-.register-info h1 {
-  font-size: 54px;
-
-  line-height: 1.05;
-
-  letter-spacing: -2px;
-
-  margin: 18px 0;
-}
-
-.register-info h1 span {
-  color: #71c276;
-}
-
-.register-info-content > p {
-  max-width: 380px;
-
-  color: #b8c8ba;
-
-  font-size: 14px;
-
-  line-height: 1.7;
-}
-
-.register-points {
-  margin-top: 35px;
-
-  display: flex;
-  flex-direction: column;
-
-  gap: 15px;
-}
-
-.register-points div {
-  display: flex;
-  align-items: center;
-
-  gap: 12px;
-}
-
-.register-points span {
-  width: 25px;
-  height: 25px;
-
-  background: #315b36;
-
-  color: #78c67d;
-
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 12px;
-}
-
-.register-points p {
-  margin: 0;
-
-  color: #d0dbd1;
-
-  font-size: 13px;
-}
-
-
-/* RIGHT */
+/* =========================
+   REGISTER CARD
+========================= */
 
 .register-card {
-  padding: 45px 55px;
+    width: 100%;
+    max-width: 470px;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #e3ebe5;
+    box-shadow: 0 18px 50px rgba(35, 80, 45, 0.13);
+    box-sizing: border-box;
 }
 
-.register-heading h2 {
-  margin: 0;
+    /* =========================
+   HEADING
+========================= */
 
-  color: #172b1b;
+    .register-card h1 {
+        margin: 0;
+        text-align: center;
+        color: #1f2937;
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+    }
 
-  font-size: 29px;
-}
+    .register-card > p {
+        text-align: center;
+        margin: 8px 0 28px;
+        color: #6b7280;
+        font-size: 14px;
+    }
 
-.register-heading p {
-  margin: 8px 0 25px;
+    /* =========================
+   FORM
+========================= */
 
-  color: #7a827a;
-
-  font-size: 13px;
-}
-
-
-/* ROLE */
-
-.role-title {
-  display: block;
-
-  margin-bottom: 9px;
-
-  color: #354137;
-
-  font-size: 13px;
-
-  font-weight: 600;
-}
-
-.role-grid {
-  display: grid;
-
-  grid-template-columns: repeat(4, 1fr);
-
-  gap: 8px;
-
-  margin-bottom: 25px;
-}
-
-.role-btn {
-  min-height: 70px;
-
-  padding: 10px 8px;
-
-  background: white;
-
-  border: 1px solid #dfe6df;
-
-  border-radius: 9px;
-
-  cursor: pointer;
-
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 4px;
-
-  transition: 0.2s;
-}
-
-.role-btn > span {
-  font-size: 21px;
-}
-
-.role-btn strong {
-  display: block;
-
-  color: #374238;
-
-  font-size: 11px;
-}
-
-.role-btn small {
-  display: block;
-
-  margin-top: 2px;
-
-  color: #8a928a;
-
-  font-size: 8px;
-}
-
-.role-btn:hover {
-  border-color: #77ad7a;
-}
-
-.role-btn.active {
-  border: 1.5px solid #3d8b40;
-
-  background: #eff8ef;
-}
-
-.role-btn.active strong {
-  color: #3d8b40;
-}
-
-
-/* FORM */
-
-.register-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-row {
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  gap: 14px;
-}
+    .register-card form {
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+    }
 
 .form-group {
-  margin-bottom: 17px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
 }
 
-.form-group label {
-  display: block;
+    .form-group label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #374151;
+    }
 
-  margin-bottom: 7px;
+    /* =========================
+   INPUT & SELECT
+========================= */
 
-  color: #354137;
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        height: 46px;
+        padding: 0 14px;
+        box-sizing: border-box;
+        border: 1px solid #d5ded7;
+        border-radius: 9px;
+        background: #ffffff;
+        color: #1f2937;
+        font-size: 15px;
+        outline: none;
+        transition: all 0.25s ease;
+    }
 
-  font-size: 12px;
+        .form-group input::placeholder {
+            color: #9ca3af;
+        }
 
-  font-weight: 600;
+        .form-group input:hover,
+        .form-group select:hover {
+            border-color: #9ab89d;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #43a047;
+            box-shadow: 0 0 0 3px rgba(67, 160, 71, 0.12);
+        }
+
+    /* Select */
+
+    .form-group select {
+        cursor: pointer;
+        appearance: auto;
+    }
+
+/* =========================
+   REGISTER BUTTON
+========================= */
+
+.register-card button[type="submit"] {
+    width: 100%;
+    height: 48px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 9px;
+    background: linear-gradient( 135deg, #2e7d32, #43a047 );
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
 }
 
-.form-group input {
-  width: 100%;
+    .register-card button[type="submit"]:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 20px rgba(46, 125, 50, 0.25);
+    }
 
-  box-sizing: border-box;
+    .register-card button[type="submit"]:active {
+        transform: translateY(0);
+    }
 
-  padding: 12px 13px;
+    .register-card button[type="submit"]:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+        transform: none;
+    }
 
-  border: 1px solid #dce3dc;
+/* =========================
+   ERROR MESSAGE
+========================= */
 
-  border-radius: 8px;
-
-  outline: none;
-
-  color: #26352a;
-
-  font-size: 12px;
+.register-error {
+    margin-bottom: 18px;
+    padding: 11px 13px;
+    border-radius: 8px;
+    border: 1px solid #fecaca;
+    background: #fff1f2;
+    color: #c62828;
+    font-size: 14px;
 }
 
-.form-group input:focus {
-  border-color: #4b9650;
+/* =========================
+   SUCCESS MESSAGE
+========================= */
 
-  box-shadow: 0 0 0 3px rgba(75, 150, 80, 0.08);
+.register-success {
+    margin-bottom: 18px;
+    padding: 11px 13px;
+    border-radius: 8px;
+    border: 1px solid #c8e6c9;
+    background: #edf7ed;
+    color: #2e7d32;
+    font-size: 14px;
 }
 
+/* =========================
+   LOGIN LINK
+========================= */
 
-/* TERMS */
-
-.terms {
-  display: flex;
-
-  align-items: flex-start;
-
-  gap: 8px;
-
-  margin: 2px 0 20px;
-
-  color: #737b73;
-
-  font-size: 11px;
-
-  line-height: 1.5;
-
-  cursor: pointer;
+.register-card .login-link {
+    margin: 24px 0 0;
+    text-align: center;
+    color: #6b7280;
+    font-size: 14px;
 }
 
-.terms input {
-  margin-top: 2px;
+    .register-card .login-link span {
+        color: #2e7d32;
+        font-weight: 600;
+        cursor: pointer;
+        transition: color 0.2s ease;
+    }
 
-  accent-color: #3d8b40;
-}
+        .register-card .login-link span:hover {
+            color: #1b5e20;
+            text-decoration: underline;
+        }
 
-.terms a {
-  color: #3d8b40;
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
 
-  text-decoration: none;
+@media (max-width: 550px) {
+    .register-page {
+        padding: 30px 15px;
+    }
 
-  font-weight: 600;
-}
+    .register-card {
+        padding: 30px 23px;
+        border-radius: 14px;
+    }
 
+        .register-card h1 {
+            font-size: 26px;
+        }
 
-/* SUBMIT */
-
-.register-submit {
-  width: 100%;
-
-  padding: 14px;
-
-  border: none;
-
-  border-radius: 8px;
-
-  background: #3d8b40;
-
-  color: white;
-
-  font-size: 13px;
-
-  font-weight: 700;
-
-  cursor: pointer;
-
-  transition: 0.2s;
-}
-
-.register-submit:hover {
-  background: #2f7133;
-}
-
-
-/* LOGIN */
-
-.login-link {
-  text-align: center;
-
-  margin-top: 20px;
-
-  color: #7b837b;
-
-  font-size: 12px;
-}
-
-.login-link a {
-  margin-left: 5px;
-
-  color: #3d8b40;
-
-  text-decoration: none;
-
-  font-weight: 700;
-}
-
-
-/* RESPONSIVE */
-
-@media (max-width: 900px) {
-
-  .register-container {
-    grid-template-columns: 1fr;
-  }
-
-  .register-info {
-    min-height: 350px;
-  }
-
-  .register-card {
-    padding: 40px 35px;
-  }
-}
-
-@media (max-width: 600px) {
-
-  .register-page {
-    padding: 20px 10px;
-  }
-
-  .register-info {
-    padding: 30px;
-  }
-
-  .register-info h1 {
-    font-size: 42px;
-  }
-
-  .register-card {
-    padding: 30px 22px;
-  }
-
-  .role-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
+    .form-group input,
+    .form-group select {
+        height: 44px;
+    }
 }

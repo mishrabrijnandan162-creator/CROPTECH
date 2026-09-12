@@ -228,3 +228,17 @@
         display: block;
     }
 }
+
+.logout-btn {
+    border: none;
+    background: #c62828;
+    color: white;
+    padding: 9px 16px;
+    border-radius: 7px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .logout-btn:hover {
+        background: #a91f1f;
+    }

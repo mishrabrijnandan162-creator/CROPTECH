@@ -30,6 +30,8 @@ from routes.buyer import buyer_bp
 from routes.seller import seller_bp
 from routes.demand import demand_bp
 from routes.price import price_bp
+from routes.admin import admin_bp
+from routes.fpo import fpo_bp
 
 
 
@@ -40,6 +42,8 @@ app.register_blueprint(buyer_bp)
 app.register_blueprint(seller_bp)
 app.register_blueprint(demand_bp)
 app.register_blueprint(price_bp)
+app.register_blueprint(fpo_bp)
+app.register_blueprint(admin_bp)
 
 @app.route("/")
 def home():
