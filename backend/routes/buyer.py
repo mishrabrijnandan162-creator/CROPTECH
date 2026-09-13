@@ -352,7 +352,6 @@ def cancel_order(order_id):
             "status": order.status
         }
     }), 200
-
 @buyer_bp.route("/orders/<int:order_id>", methods=["GET"])
 @jwt_required()
 def get_order_details(order_id):
@@ -364,17 +363,26 @@ def get_order_details(order_id):
             "message": "Only buyers can view order details"
         }), 403
 
-    buyer_id = int(claims["sub"])
+    try:
+        buyer_id = int(claims["sub"])
+    except (KeyError, ValueError, TypeError):
+        return jsonify({
+            "message": "Invalid user information in token"
+        }), 401
 
-    order = Order.query.filter_by(
-        id=order_id,
-        buyer_id=buyer_id
-    ).first()
+    # First find the order by ID
+    order = Order.query.get(order_id)
 
     if not order:
         return jsonify({
             "message": "Order not found"
         }), 404
+
+    # Verify that this order belongs to the logged-in buyer
+    if int(order.buyer_id) != buyer_id:
+        return jsonify({
+            "message": "You are not authorised to view this order"
+        }), 403
 
     product = Product.query.get(order.product_id)
 
@@ -383,14 +391,15 @@ def get_order_details(order_id):
         "order": {
             "id": order.id,
             "product_id": order.product_id,
-            "crop_name": product.crop_name if product else None,
+            "crop_name": product.crop_name if product else "Unknown Product",
             "quantity": order.quantity,
-            "unit": product.unit if product else None,
+            "unit": product.unit if product else "kg",
             "total_price": order.total_price,
             "status": order.status,
             "created_at": (
                 order.created_at.isoformat()
-                if order.created_at else None
+                if order.created_at
+                else None
             )
         }
     }), 200

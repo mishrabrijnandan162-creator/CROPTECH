@@ -85,12 +85,12 @@ function OrderDetails() {
         let endpoint;
 
         if (role === "BUYER") {
-            endpoint = `/ buyer / orders / ${ id } `;
+            endpoint = `/buyer/orders/${ id } `;
         } else if (
             role === "FARMER" ||
             role === "FPO"
         ) {
-            endpoint = `/ seller / orders / ${ id } `;
+            endpoint = `/seller/orders/${ id } `;
         } else {
             setError(
                 `Unsupported account role: ${ role } `
