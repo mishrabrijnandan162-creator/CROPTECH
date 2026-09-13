@@ -91,7 +91,7 @@ def register():
     # Get user.id before commit
     db.session.flush()
 
-    # =========================
+        # =========================
     # CREATE FARMER PROFILE
     # =========================
 
@@ -108,14 +108,20 @@ def register():
     # =========================
 
     elif role == "FPO":
-        fpo = FPO(
-        user_id=user.id,
-        name=name,
-        verification_status="PENDING"
-    )
-    db.session.add(fpo)
 
-    # BUYER ke liye abhi separate profile nahi hai
+        fpo = FPO(
+            user_id=user.id,
+            name=name,
+            verification_status="PENDING"
+        )
+
+        db.session.add(fpo)
+
+    # =========================
+    # BUYER
+    # =========================
+
+    # BUYER does not have a separate profile table yet.
 
     # Save everything
     db.session.commit()

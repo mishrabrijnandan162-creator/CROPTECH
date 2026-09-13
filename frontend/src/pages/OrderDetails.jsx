@@ -85,15 +85,15 @@ function OrderDetails() {
         let endpoint;
 
         if (role === "BUYER") {
-            endpoint = `/buyer/orders/${ id } `;
+            endpoint = `/buyer/orders/${ id }`;
         } else if (
             role === "FARMER" ||
             role === "FPO"
         ) {
-            endpoint = `/seller/orders/${ id } `;
+            endpoint = `/seller/orders/${ id }`;
         } else {
             setError(
-                `Unsupported account role: ${ role } `
+                `Unsupported account role: ${ role }`
             );
             setLoading(false);
             return;
@@ -103,7 +103,7 @@ function OrderDetails() {
 
         const response = await api.get(endpoint, {
             headers: {
-                Authorization: `Bearer ${ token } `,
+                Authorization: `Bearer ${ token }`,
             },
         });
 
@@ -309,7 +309,7 @@ function OrderDetails() {
             setError("");
 
             const response = await api.put(
-                `/ seller / orders / ${ id }/status`,
+                `/seller/orders/${ id }/status`,
 {
     status: newStatus,
                 },

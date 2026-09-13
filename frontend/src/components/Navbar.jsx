@@ -45,7 +45,7 @@ function Navbar() {
     }
 
     if (user?.role === "FPO") {
-      return "/farmer-dashboard";
+      return "/fpo-dashboard";
     }
 
     return "/";
