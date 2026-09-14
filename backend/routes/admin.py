@@ -2,7 +2,7 @@ from flask import Blueprint, jsonify
 from flask_jwt_extended import jwt_required, get_jwt
 
 from extensions import db
-from models import User, Farmer, FPO, Product, Order
+from models import User, FPO, Product, Order
 
 
 admin_bp = Blueprint(
@@ -21,8 +21,6 @@ admin_bp = Blueprint(
 def admin_dashboard():
 
     claims = get_jwt()
-
-    # Get logged-in user
     user_id = int(claims["sub"])
 
     # Only ADMIN allowed
@@ -94,7 +92,6 @@ def admin_dashboard():
     # =========================
 
     return jsonify({
-
         "status": "success",
 
         "admin": {
@@ -104,22 +101,56 @@ def admin_dashboard():
         },
 
         "stats": {
-
             "total_users": total_users,
-
             "farmers": total_farmers,
-
             "fpos": total_fpos,
-
             "buyers": total_buyers,
-
             "products": total_products,
-
             "orders": total_orders,
-
             "total_sales": total_sales,
-
             "pending_fpo": pending_fpo
         }
+    }), 200
 
+
+# =========================
+# VERIFY FPO
+# =========================
+
+@admin_bp.route("/fpo/<int:fpo_id>/verify", methods=["POST"])
+@jwt_required()
+def verify_fpo(fpo_id):
+
+    claims = get_jwt()
+
+    # Only ADMIN allowed
+    if claims.get("role") != "ADMIN":
+        return jsonify({
+            "message": "Only admins can verify FPOs"
+        }), 403
+
+    fpo = FPO.query.get(fpo_id)
+
+    if not fpo:
+        return jsonify({
+            "message": "FPO not found"
+        }), 404
+
+    if fpo.verification_status == "VERIFIED":
+        return jsonify({
+            "message": "FPO is already verified"
+        }), 400
+
+    fpo.verification_status = "VERIFIED"
+
+    db.session.commit()
+
+    return jsonify({
+        "status": "success",
+        "message": "FPO verified successfully",
+        "fpo": {
+            "id": fpo.id,
+            "name": fpo.name,
+            "verification_status": fpo.verification_status
+        }
     }), 200
