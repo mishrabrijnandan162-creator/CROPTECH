@@ -169,7 +169,7 @@ function AdminDashboard() {
 
         <div className="admin-actions">
 
-          <button onClick={() => navigate("/admin/users")}>
+                  <button onClick={() => alert("This feature is coming soon.")}>
             <span>👥</span>
             <div>
               <strong>User Management</strong>
@@ -177,7 +177,7 @@ function AdminDashboard() {
             </div>
           </button>
 
-          <button onClick={() => navigate("/admin/fpo-verification")}>
+            <button onClick={() => alert("This feature is coming soon.")}>
             <span>🏢</span>
             <div>
               <strong>FPO Verification</strong>
@@ -185,7 +185,7 @@ function AdminDashboard() {
             </div>
           </button>
 
-          <button onClick={() => navigate("/admin/products")}>
+            <button onClick={() => alert("This feature is coming soon.")}>
             <span>🌾</span>
             <div>
               <strong>Product Management</strong>
@@ -193,7 +193,7 @@ function AdminDashboard() {
             </div>
           </button>
 
-          <button onClick={() => navigate("/admin/orders")}>
+            <button onClick={() => alert("This feature is coming soon.")}>
             <span>📦</span>
             <div>
               <strong>Order Management</strong>

@@ -99,7 +99,13 @@ function EditCrop() {
       );
 
       alert("Crop updated successfully! 🌾");
-      navigate("/farmer-dashboard");
+        const user = JSON.parse(localStorage.getItem("user"));
+
+        if (user?.role === "FPO") {
+            navigate("/fpo-dashboard");
+        } else {
+            navigate("/farmer-dashboard");
+        }
     } catch (err) {
       console.error(err);
 
@@ -251,7 +257,7 @@ function EditCrop() {
             <button
               type="button"
               className="cancel-btn"
-              onClick={() => navigate("/farmer-dashboard")}
+              onClick={() => navigate("/fpo-dashboard")}
             >
               Cancel
             </button>

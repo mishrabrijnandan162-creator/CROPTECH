@@ -216,7 +216,7 @@ function SellerOrders() {
                         <h1>Customer Orders</h1>
                         <p>Manage orders received for your crops.</p>
                     </div>
-                    <Link to="/farmer-dashboard" className="back-dashboard-btn">
+                    <Link to="/fpo-dashboard" className="back-dashboard-btn">
                         ← Dashboard
                     </Link>
                 </div>

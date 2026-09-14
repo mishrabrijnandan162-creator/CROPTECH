@@ -312,6 +312,10 @@ paket-files/
 # CodeRush personal settings
 .cr/personal
 
+# Environment variables / secrets
+.env
+**/.env
+
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
@@ -361,3 +365,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+.env
+**/.env
