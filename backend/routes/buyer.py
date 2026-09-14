@@ -211,16 +211,23 @@ def place_order():
             "message": "Quantity must be greater than zero"
         }), 400
 
-    product = Product.query.filter_by(
-        id=product_id,
-        is_available=True
-    ).first()
+    # Lock the product row until this transaction completes.
+    product = (
+        Product.query
+        .filter_by(
+            id=product_id,
+            is_available=True
+        )
+        .with_for_update()
+        .first()
+    )
 
     if not product:
         return jsonify({
             "message": "Product not found or unavailable"
         }), 404
 
+    # Stock is checked while the product row is locked.
     if quantity > product.quantity:
         return jsonify({
             "message": "Requested quantity is not available",
@@ -244,6 +251,7 @@ def place_order():
 
     db.session.add(order)
 
+    # Update inventory while the row is still locked.
     product.quantity -= quantity
 
     if product.quantity == 0:
@@ -332,7 +340,12 @@ def cancel_order(order_id):
             "message": "Only pending orders can be cancelled"
         }), 400
 
-    product = Product.query.get(order.product_id)
+    product = (
+    Product.query
+    .filter_by(id=order.product_id)
+    .with_for_update()
+    .first()
+)
 
     if product:
         product.quantity += order.quantity
